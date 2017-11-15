@@ -1,38 +1,67 @@
 <template>
   <div id="skill">
-    <div>
-    <ve-line :data="chartData"></ve-line>
-  </div>
-
+    <h1>擅长技术</h1>
+    <div class="content">
+      <ul class="css clearfix">
+        <li>css</li>
+        <li>scss</li>
+        <li>css3</li>
+      </ul>
+      <ul class="mvvm clearfix">
+        <li>JavaScript</li>
+        <li>Jquery</li>
+        <li>Vue.js</li>
+        <li>Git</li>
+        <li>Vscode</li>
+      </ul>
+      <ul class="others clearfix">
+        <li>axios</li>
+        <li>ajax</li>
+        <li>node.js</li>
+        <li>webpack</li>
+      </ul>
+    </div>
   </div>
 </template>
 
  <script>
-import VeLine from "v-charts/lib/line";
-
-export default {
-  created() {
-    this.chartData = {
-      columns: ["日期", "销售量"],
-      rows: [
-        { 日期: "1月1日", 销售量: 123 },
-        { 日期: "1月2日", 销售量: 1223 },
-        { 日期: "1月3日", 销售量: 2123 },
-        { 日期: "1月4日", 销售量: 4123 },
-        { 日期: "1月5日", 销售量: 3123 },
-        { 日期: "1月6日", 销售量: 7123 }
-      ]
-    };
-  },
-  components: { VeLine }
-};
+export default {};
 </script>
 
-
-<style>
+<style lang="scss">
 #skill {
-  border: 1px solid red;
+  background: #5bc0ab;
   height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  > h1 {
+      text-align: center;
+      font-size: 42px;
+      color: #fff;
+      margin-bottom: 120px;
+      position: absolute;
+      top: 200px;
+    }
+  > .content {
+    > ul {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      > li {
+        float: left;
+        font-size: 24px;
+        margin: 4px 7px;
+        padding: 4px 10px;
+        background: #2a6055;
+        border-radius: 8px;
+        color: #fff;
+      }
+    }
+  }
 }
 </style>
+
 

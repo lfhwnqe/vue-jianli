@@ -34,15 +34,15 @@
       </div>
     </div>
     <main>
-      <Me v-bind:class="{active: currentTab === 0}">
+      <Me v-show="currentTab === 0">
       </Me>
-      <Skill v-bind:class="{active: currentTab === 1}">
+      <Skill v-show="currentTab === 1">
       </Skill>
-      <Concat v-bind:class="{active: currentTab === 2}">
-      </Concat>
-      <Projects v-bind:class="{active: currentTab === 3}">
+      <Projects v-show="currentTab === 2">
       </Projects>
-      <Blog v-bind:class="{active: currentTab === 4}">
+      <Concat v-show="currentTab === 3">
+      </Concat>
+      <Blog v-show="currentTab === 4">
       </Blog>
     </main>
   </div>
@@ -101,12 +101,12 @@ export default {
 }
 
 .icon {
-  width: 3em;
-  height: 3.3em;
+  width: 2.6em;
+  height: 2.6em;
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
-  padding: 0.4em;
+  padding: 0.6em;
   border-radius: 10em;
   cursor: pointer;
 }
@@ -150,6 +150,7 @@ export default {
         }
         > .icon-email {
           background: gray;
+          
           cursor: pointer;
         }
       }
@@ -157,9 +158,6 @@ export default {
   }
 }
 main {
-  > div {
-    display: none;
-  }
   > .active {
     display: block;
   }
